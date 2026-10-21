@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101c2c">
+<meta name="description" content="Uganda Loan Services — loan application information, repayment planning and customer support.">
+<title>Uganda Loan Services | Borrow with clarity</title>
+
+<style>
+:root{--navy:#101c2c;--navy2:#17283d;--gold:#d9b56d;--gold2:#f2d99f;--ink:#182536;--muted:#687587;--paper:#f6f7f9;--white:#fff;--line:#e6e9ee;--green:#128c62;--shadow:0 18px 55px rgba(16,28,44,.10);--radius:22px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,a.btn{cursor:pointer}
+.wrap{width:min(1160px,92%);margin:auto}
+.notice{background:#fff5dd;color:#604719;font-size:.83rem;padding:10px 4%;text-align:center;border-bottom:1px solid #f0dfb4}
+.nav{background:rgba(16,28,44,.97);color:#fff;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
+.brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.01em}
+.brandmark{height:42px;width:42px;border:1px solid var(--gold);border-radius:13px;display:grid;place-items:center;color:var(--gold2);font-weight:900;font-size:1.2rem}
+.brand small{display:block;color:#c2cad4;font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.links{display:flex;gap:25px;align-items:center;font-size:.91rem;color:#e0e6ed}
+.links a:hover{color:var(--gold2)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 18px;border:0;border-radius:12px;background:var(--gold);color:#1a2634;font-weight:800;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.btn.outline{background:transparent;border:1px solid rgba(255,255,255,.32);color:#fff}
+.btn.dark{background:var(--navy);color:#fff}
+.btn.green{background:#159766;color:#fff}
+.btn.small{padding:9px 13px;font-size:.88rem}
+.hero{background:radial-gradient(circle at 78% 20%,rgba(217,181,109,.17),transparent 25%),linear-gradient(125deg,#101c2c 0%,#1a2d43 70%,#233a4e 100%);color:#fff;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(217,181,109,.17);border-radius:50%;right:-160px;bottom:-240px;box-shadow:0 0 0 42px rgba(217,181,109,.035),0 0 0 90px rgba(217,181,109,.025)}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:55px;align-items:center;padding:80px 0 92px;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold2);font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+.dot{height:7px;width:7px;border-radius:50%;background:var(--gold)}
+h1{font-size:clamp(2.6rem,5.5vw,4.8rem);line-height:1.03;letter-spacing:-.055em;margin:19px 0 22px;max-width:700px}
+h1 em{font-style:normal;color:var(--gold2)}
+.hero p{font-size:1.08rem;color:#d0d8e1;max-width:610px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 23px}
+.trustline{font-size:.82rem;color:#c4ced8}
+.hero-card{background:rgba(255,255,255,.97);color:var(--ink);padding:28px;border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.22);transform:rotate(1deg)}
+.hero-card h3{margin:0 0 5px;font-size:1.15rem}
+.hero-card .sub{margin:0 0 22px;font-size:.85rem;color:var(--muted)}
+.amount{font-size:2.15rem;font-weight:900;letter-spacing:-.04em;color:var(--navy)}
+.amount small{font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:0}
+.range{width:100%;accent-color:var(--green);margin:12px 0}
+.fieldlabel{display:flex;justify-content:space-between;gap:10px;font-size:.86rem;font-weight:750;margin:16px 0 6px}
+.calcrow{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.calcrow strong{font-size:.92rem}
+.calc-note{font-size:.76rem;color:var(--muted);margin-top:14px}
+.section{padding:78px 0}
+.section.white{background:#fff}
+.sectionhead{max-width:680px;margin:0 auto 36px;text-align:center}
+.kicker{font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;color:#9a742e;font-weight:850}
+.section h2{font-size:clamp(1.9rem,3.7vw,3rem);line-height:1.12;letter-spacing:-.04em;margin:10px 0 13px;color:var(--navy)}
+.sectionhead p{color:var(--muted);margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{background:#fff;border:1px solid var(--line);border-radius:19px;padding:25px;box-shadow:0 8px 25px rgba(16,28,44,.035);transition:.22s}
+.white .service{background:#fafbfc}
+.service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.iconbox{height:47px;width:47px;border-radius:14px;background:#f7edd8;color:#8b6729;display:grid;place-items:center;font-size:1.3rem;margin-bottom:18px}
+.service h3{margin:0 0 8px;font-size:1.06rem}
+.service p{margin:0;color:var(--muted);font-size:.9rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.darkpanel{background:var(--navy);color:#fff;padding:36px;border-radius:24px;position:relative;overflow:hidden}
+.darkpanel h3{font-size:1.65rem;line-height:1.2;margin:0 0 12px}
+.darkpanel p{color:#c8d2de}
+.checklist{list-style:none;padding:0;margin:23px 0}
+.checklist li{margin:12px 0;display:flex;gap:10px;color:#e7ecf2}
+.check{color:var(--gold2);font-weight:900}
+.plainlist{padding-left:20px;color:var(--muted)}
+.plainlist li{margin:9px 0}
+.formwrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:30px;align-items:start}
+.formintro{background:var(--navy);color:#fff;border-radius:22px;padding:30px;position:sticky;top:100px}
+.formintro h3{font-size:1.6rem;line-height:1.2;margin:0 0 12px}
+.formintro p{color:#cbd5df;font-size:.92rem}
+.formintro .mini{border-top:1px solid rgba(255,255,255,.18);padding-top:16px;margin-top:20px;font-size:.82rem;color:#d7dee6}
+.formcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.formcard h3{margin:0 0 4px;font-size:1.35rem}
+.formcard>p{margin:0 0 22px;color:var(--muted);font-size:.9rem}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.control{display:flex;flex-direction:column;gap:7px}
+.control.full{grid-column:1/-1}
+.control label{font-size:.84rem;font-weight:750}
+.control input,.control select,.control textarea{width:100%;border:1px solid #dce1e8;border-radius:11px;padding:12px 13px;background:#fff;color:var(--ink);outline:none}
+.control input:focus,.control select:focus,.control textarea:focus{border-color:#b58b40;box-shadow:0 0 0 3px rgba(217,181,109,.18)}
+.control textarea{resize:vertical;min-height:95px}
+.fine{font-size:.78rem;color:var(--muted)}
+.consent{display:flex;align-items:flex-start;gap:10px;margin:18px 0;font-size:.82rem;color:var(--muted)}
+.consent input{margin-top:4px}
+.paymentbox{border:1px solid #f0dfb4;background:#fff9e9;border-radius:13px;padding:15px;font-size:.84rem;color:#604719;margin:18px 0}
+.paymentbox strong{display:block;margin-bottom:4px}
+.faq{max-width:830px;margin:auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 20px;margin:10px 0}
+.faq summary{font-weight:800;cursor:pointer}
+.faq details p{color:var(--muted);margin-bottom:0}
+.contactband{background:linear-gradient(120deg,#f8edda,#fff9ef);border:1px solid #f0dfbd;border-radius:22px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.contactband h3{margin:0 0 5px;font-size:1.5rem}
+.contactband p{margin:0;color:var(--muted)}
+footer{background:#0c1623;color:#cbd3dd;padding:42px 0 22px}
+.footergrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.footer-title{font-weight:850;color:#fff;margin-bottom:12px}
+.footertext{font-size:.86rem;color:#aeb9c6}
+.footerlinks{display:grid;gap:8px;font-size:.88rem}
+.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;font-size:.78rem;color:#8f9baa;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:25;width:58px;height:58px;border-radius:50%;background:#159766;color:white;display:grid;place-items:center;box-shadow:0 12px 28px rgba(21,151,102,.35);font-size:1.55rem;border:3px solid #fff}
+.whatsapp-float:hover{transform:translateY(-3px)}
+.status{display:none;padding:13px;border-radius:10px;background:#e9f8f0;color:#12623f;margin-top:14px;font-size:.88rem}
+.status.show{display:block}
+.smallcaps{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:#9b7b40;font-weight:850}
+@media(max-width:850px){
+.links{display:none}
+.hero-grid,.split,.formwrap{grid-template-columns:1fr}
+.hero-grid{padding:55px 0 68px;gap:35px}
+.hero-card{transform:none;max-width:560px}
+.grid3{grid-template-columns:repeat(2,1fr)}
+.formintro{position:static}
+.footergrid{grid-template-columns:1fr 1fr}
+.footergrid>div:first-child{grid-column:1/-1}
+}
+@media(max-width:560px){
+.navin{min-height:68px}
+.brand{font-size:.9rem}
+.brandmark{height:38px;width:38px}
+.nav .btn{padding:10px 12px;font-size:.82rem}
+.hero-grid{padding:45px 0 55px}
+.hero p{font-size:1rem}
+h1{font-size:2.8rem}
+.hero-card{padding:22px}
+.section{padding:58px 0}
+.grid3{grid-template-columns:1fr}
+.formgrid{grid-template-columns:1fr}
+.control.full{grid-column:auto}
+.formcard,.formintro{padding:22px}
+.contactband{align-items:flex-start;flex-direction:column}
+.footergrid{grid-template-columns:1fr}
+.footergrid>div:first-child{grid-column:auto}
+.copyright{display:block}
+.copyright span{display:block;margin-top:8px}
+}
+</style>
+</head>
+
+<body>
+<div class="notice">Important: Submitting an application does not guarantee approval. Review all fees, eligibility rules and repayment terms before paying anything.</div>
+
+<header class="nav">
+  <div class="wrap navin">
+    <a class="brand" href="#home" aria-label="Uganda Loan Services home">
+      <span class="brandmark">UL</span>
+      <span>UGANDA LOAN SERVICES<small>Clear terms. Responsible borrowing.</small></span>
+    </a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="#loans">Loan options</a>
+      <a href="#how">How it works</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#apply">Apply</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <a class="btn small" href="#apply">Apply now ↗</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Lending information & applications</div>
+      <h1>Move forward with <em>financial clarity.</em></h1>
+      <p>Explore loan options, estimate a repayment plan and submit an application for review. We aim to make the process clear, respectful and easy to understand.</p>
+      <div class="actions">
+        <a class="btn" href="#apply">Start an application <span>→</span></a>
+        <a class="btn outline" href="#calculator">Estimate repayments</a>
+      </div>
+      <div class="trustline">✓ Transparent information &nbsp; · &nbsp; ✓ Application review &nbsp; · &nbsp; ✓ Customer support</div>
+    </div>
+
+    <aside class="hero-card" id="calculator" aria-label="Illustrative loan calculator">
+      <div class="smallcaps">Loan planner</div>
+      <h3>Estimate your borrowing plan</h3>
+      <p class="sub">An illustration only — not an offer or approval.</p>
+
+      <div class="fieldlabel">
+        <label for="loanAmount">Amount requested</label>
+        <span id="amountLabel">UGX 1,000,000</span>
+      </div>
+      <input class="range" id="loanAmount" type="range" min="100000" max="12000500" step="50000" value="1000000">
+
+      <div class="fieldlabel">
+        <label for="loanMonths">Repayment period</label>
+        <span id="monthsLabel">6 months</span>
+      </div>
+      <input class="range" id="loanMonths" type="range" min="1" max="24" step="1" value="6">
+
+      <div class="calcrow"><span>Illustrative interest rate</span><strong>Not configured</strong></div>
+      <div class="calcrow"><span>Estimated repayment</span><strong id="repayment">Not available</strong></div>
+      <div class="calcrow"><span>Maximum application amount</span><strong>UGX 12,000,500</strong></div>
+
+      <p class="calc-note">No interest rate or total repayment is assumed here. Ask the lender for a written offer showing all charges, interest, instalments and due dates before accepting a loan.</p>
+      <a class="btn dark" style="width:100%;margin-top:15px" href="#apply">Apply for review</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section white" id="loans">
+  <div class="wrap">
+    <div class="sectionhead">
+      <div class="kicker">Loan options</div>
+      <h2>Support for different financial needs</h2>
+      <p>Choose a category to discuss your needs. Availability, limits, pricing and eligibility must be confirmed by the lender before any commitment.</p>
+    </div>
+
+    <div class="grid3">
+      <article class="service"><div class="iconbox">↗</div><h3>Personal loan</h3><p>For eligible personal expenses. Repayment terms and affordability are reviewed before a decision.</p></article>
+      <article class="service"><div class="iconbox">▦</div><h3>Business support</h3><p>For eligible small-business needs, subject to business details and the lender's assessment.</p></article>
+      <article class="service"><div class="iconbox">⌂</div><h3>Home & family needs</h3><p>Discuss planned household costs and a repayment schedule that you can reasonably afford.</p></article>
+      <article class="service"><div class="iconbox">◷</div><h3>Emergency expenses</h3><p>For urgent needs where a loan is suitable. Consider the full cost and other options first.</p></article>
+      <article class="service"><div class="iconbox">◎</div><h3>Education & skills</h3><p>Ask about funding for eligible education, training or professional development expenses.</p></article>
+      <article class="service"><div class="iconbox">⇄</div><h3>Repayment guidance</h3><p>Get help understanding instalments, due dates, late-payment consequences and total cost.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap split">
+    <div>
+      <div class="kicker">A clear process</div>
+      <h2>Know the steps before you commit.</h2>
+      <p style="color:var(--muted)">A responsible loan process should explain what information is needed, how decisions are made and what the loan will cost.</p>
+      <ul class="plainlist">
+        <li>Submit your contact details and the amount you want to request.</li>
+        <li>Discuss eligibility and provide any required documents through a verified channel.</li>
+        <li>Review a written offer with the interest rate, fees, total repayment and due dates.</li>
+        <li>Accept only when you understand the agreement and can afford the instalments.</li>
+      </ul>
+      <a class="btn dark" href="#apply">Submit an application</a>
+    </div>
+
+    <div class="darkpanel">
+      <div class="eyebrow"><span class="dot"></span> Borrow responsibly</div>
+      <h3>Your application is a request — not a promise of funds.</h3>
+      <p>UGX 12,000,500 is the maximum amount that may be requested on this website. It is not a guaranteed loan limit or a statement that an application will be approved.</p>
+      <ul class="checklist">
+        <li><span class="check">✓</span><span>Ask for the full cost of credit in writing.</span></li>
+        <li><span class="check">✓</span><span>Confirm the lender's legal identity and authorisation.</span></li>
+        <li><span class="check">✓</span><span>Verify every payment channel independently.</span></li>
+        <li><span class="check">✓</span><span>Never share your PIN, OTP or mobile-money password.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="apply">
+  <div class="wrap">
+    <div class="sectionhead">
+      <div class="kicker">Application form</div>
+      <h2>Tell us what you need</h2>
+      <p>Complete the form to prepare a WhatsApp enquiry. It will open a message for you to review and send yourself; it does not automatically submit or approve a loan.</p>
+    </div>
+
+    <div class="formwrap">
+      <aside class="formintro">
+        <div class="eyebrow"><span class="dot"></span> Uganda Loan Services</div>
+        <h3>Start with the right information.</h3>
+        <p>Provide accurate contact details and a realistic request. Do not send identity documents, passwords, PINs or one-time codes through this form.</p>
+        <div class="mini"><strong>Maximum amount requestable</strong><br>Up to UGX 12,000,500, subject to assessment and the lender's actual terms.</div>
+        <div class="mini"><strong>Response channel</strong><br>WhatsApp enquiry to the Kenya number configured for this website.</div>
+      </aside>
+
+      <form class="formcard" id="loanForm">
+        <h3>Loan application enquiry</h3>
+        <p>Fields marked * are required.</p>
+
+        <div class="formgrid">
+          <div class="control">
+            <label for="fullName">Full name *</label>
+            <input id="fullName" name="fullName" autocomplete="name" required maxlength="100" placeholder="Your full name">
+          </div>
+
+          <div class="control">
+            <label for="phone">Ugandan phone number *</label>
+            <input id="phone" name="phone" required inputmode="tel" maxlength="20" placeholder="e.g. 07XXXXXXXX">
+          </div>
+
+          <div class="control">
+            <label for="loanType">Loan purpose *</label>
+            <select id="loanType" name="loanType" required>
+              <option value="">Choose a category</option>
+              <option>Personal expenses</option>
+              <option>Business support</option>
+              <option>Home and family needs</option>
+              <option>Emergency expenses</option>
+              <option>Education and skills</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <label for="requested">Amount requested (UGX) *</label>
+            <input id="requested" name="requested" type="number" min="100000" max="12000500" step="50000" required value="1000000">
+          </div>
+
+          <div class="control">
+            <label for="income">Monthly income (UGX)</label>
+            <input id="income" name="income" type="number" min="0" max="1000000000" placeholder="Optional">
+          </div>
+
+          <div class="control">
+            <label for="period">Preferred repayment period</label>
+            <select id="period" name="period">
+              <option>1 month</option>
+              <option>3 months</option>
+              <option selected>6 months</option>
+              <option>9 months</option>
+              <option>12 months</option>
+              <option>18 months</option>
+              <option>24 months</option>
+            </select>
+          </div>
+
+          <div class="control full">
+            <label for="details">Additional information</label>
+            <textarea id="details" name="details" maxlength="700" placeholder="Briefly explain your needs (optional). Do not include sensitive account details."></textarea>
+          </div>
+        </div>
+
+        <div class="paymentbox">
+          <strong>About the 10,000 UGX account-opening fee</strong>
+          This website does not collect or verify a deposit. Before paying any fee, ask for the lender's legal business details, written fee policy, refund conditions and an official payment channel in the lender's registered name. Do not pay to an unverified personal number. Never pay based only on a promise that a loan is guaranteed.
+        </div>
+
+        <label class="consent">
+          <input id="consent" type="checkbox" required>
+          <span>I confirm the details are accurate and agree that this enquiry may be shared through WhatsApp for follow-up. I understand that this is not a loan approval and that I should review all fees and terms before making payment.</span>
+        </label>
+
+        <button class="btn green" style="width:100%" type="submit">Continue to WhatsApp ↗</button>
+        <p class="fine" style="margin:12px 0 0">WhatsApp will open with a prepared message. Review it and press Send in WhatsApp to deliver it.</p>
+        <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fees">
+  <div class="wrap split">
+    <div>
+      <div class="kicker">Fees & payments</div>
+      <h2>Payment information must be verifiable.</h2>
+      <p style="color:var(--muted)">MTN Mobile Money and Airtel Money are common payment methods in Uganda. This template intentionally does not invent merchant codes, phone numbers, interest rates or licensing claims.</p>
+      <ul class="plainlist">
+        <li>Publish only payment details verified as belonging to the business.</li>
+        <li>Clearly disclose any genuine application or account fee before the customer agrees.</li>
+        <li>Explain whether a fee is refundable, what it covers and whether it is payable regardless of approval.</li>
+        <li>Issue a receipt and provide a real support contact for payment questions.</li>
+      </ul>
+    </div>
+
+    <div class="service" style="padding:30px">
+      <div class="iconbox">▤</div>
+      <h3>Payment channels to configure</h3>
+      <p><strong>MTN Mobile Money:</strong> Official merchant / collection details to be added by the business after verification.</p>
+      <p style="margin-top:12px"><strong>Airtel Money:</strong> Official merchant / collection details to be added by the business after verification.</p>
+      <p style="margin-top:16px" class="fine">Do not replace these notes with another person's number or a code that has not been confirmed by the relevant provider.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="faq">
+  <div class="wrap">
+    <div class="sectionhead">
+      <div class="kicker">Frequently asked questions</div>
+      <h2>Important things to know</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Will I automatically receive UGX 12,000,500?</summary>
+        <p>No. That is the maximum amount a visitor can request through this form, not a promise, approval or guaranteed lending limit. Any real offer depends on the lender's eligibility assessment and terms.</p>
+      </details>
+
+      <details>
+        <summary>Is the 10,000 UGX fee required?</summary>
+        <p>This website does not confirm or collect that fee. Before paying any upfront charge, independently verify the business, the reason for the charge, its refund policy and the official payment recipient. An upfront fee does not guarantee approval or disbursement.</p>
+      </details>
+
+      <details>
+        <summary>What are the interest rate and repayment amount?</summary>
+        <p>They have not been configured because no verified rate or fee schedule was supplied. Request a written disclosure of the annual or periodic interest rate, all fees, total amount repayable, instalment schedule and late-payment consequences before accepting a loan.</p>
+      </details>
+
+      <details>
+        <summary>Can I pay with MTN or Airtel Money?</summary>
+        <p>The page is designed to support information for both methods, but official merchant details must be added and verified by the business. Do not send money to a number solely because it appears in an unverified message.</p>
+      </details>
+
+      <details>
+        <summary>Does the form send my message automatically?</summary>
+        <p>No. It opens WhatsApp with a draft message. You can review it and choose whether to send it. This static HTML page does not store applications in a database or verify loan eligibility.</p>
+      </details>
+
+      <details>
+        <summary>What should I check before borrowing?</summary>
+        <p>Verify the lender's identity and authorisation with the relevant Ugandan regulator, read the full agreement, compare the total cost, check the repayment dates and make sure instalments fit your budget. Never share your mobile-money PIN or OTP.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contactband">
+      <div>
+        <div class="kicker">Need clarification?</div>
+        <h3>Ask before you commit.</h3>
+        <p>Send a question about the application process, fees or written loan terms.</p>
+      </div>
+      <a class="btn dark" id="contactButton" href="#" rel="noopener">Contact on WhatsApp ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footergrid">
+      <div>
+        <a class="brand" href="#home">
+          <span class="brandmark">UL</span>
+          <span>UGANDA LOAN SERVICES<small>Clear terms. Responsible borrowing.</small></span>
+        </a>
+        <p class="footertext" style="max-width:400px;margin-top:16px">An application-information website template. The business must verify its legal identity, authorisation, products, fees, contact details and payment channels before accepting customers.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Explore</div>
+        <div class="footerlinks">
+          <a href="#loans">Loan options</a>
+          <a href="#how">How it works</a>
+          <a href="#calculator">Loan planner</a>
+          <a href="#apply">Application form</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Important information</div>
+        <div class="footerlinks">
+          <a href="#fees">Fees & payments</a>
+          <a href="#faq">FAQs</a>
+          <a href="#terms">Terms & privacy</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="terms" class="copyright">
+      <span>© <span id="year"></span> Uganda Loan Services. All rights reserved.</span>
+      <span>Application only · No guaranteed approval · Verify all terms before payment</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" id="floatWhatsApp" href="#" aria-label="Contact Uganda Loan Services on WhatsApp" rel="noopener">✆</a>
+
+<script>
+/*
+  SETUP NOTES FOR THE SITE OWNER
+  1) The WhatsApp contact below is the Kenya number supplied for this website.
+  2) Add only official, verified MTN / Airtel merchant payment details after provider confirmation.
+  3) Replace generic service descriptions with your actual, lawful products and written terms.
+  4) This is a static website: it does not store applications or process payments.
+*/
+
+// UPDATED: Kenya WhatsApp number +254 789 697 483
+// For wa.me links, use country code and number only: no +, spaces or dashes.
+const WHATSAPP_NUMBER = "254789697483";
+
+const money = n => "UGX " + Math.round(n).toLocaleString("en-UG");
+const amount = document.getElementById("loanAmount");
+const months = document.getElementById("loanMonths");
+
+function updateCalculator() {
+  document.getElementById("amountLabel").textContent = money(Number(amount.value));
+  document.getElementById("monthsLabel").textContent =
+    months.value + (months.value === "1" ? " month" : " months");
+  document.getElementById("repayment").textContent = "Not available";
+}
+
+amount.addEventListener("input", updateCalculator);
+months.addEventListener("input", updateCalculator);
+updateCalculator();
+
+document.getElementById("requested").addEventListener("change", function () {
+  const n = Number(this.value);
+
+  if (n > 12000500) this.value = 12000500;
+  if (n < 100000 && this.value !== "") this.value = 100000;
+});
+
+function waLink(message) {
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+}
+
+const generalMessage =
+  "Hello Uganda Loan Services. I would like to ask about your loan application process, written terms, fees and verified MTN/Airtel payment channels.";
+
+document.getElementById("contactButton").href = waLink(generalMessage);
+document.getElementById("floatWhatsApp").href = waLink(generalMessage);
+
+document.getElementById("loanForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const f = e.currentTarget;
+  if (!f.reportValidity()) return;
+
+  const name = document.getElementById("fullName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const type = document.getElementById("loanType").value;
+  const requested = Number(document.getElementById("requested").value);
+  const income = document.getElementById("income").value.trim();
+  const period = document.getElementById("period").value;
+  const details = document.getElementById("details").value.trim();
+
+  if (requested < 100000 || requested > 12000500) {
+    alert("Please enter an amount between UGX 100,000 and UGX 12,000,500.");
+    return;
+  }
+
+  const message = [
+    "UGANDA LOAN SERVICES — LOAN APPLICATION ENQUIRY",
+    "",
+    "Name: " + name,
+    "Ugandan phone: " + phone,
+    "Loan purpose: " + type,
+    "Amount requested: " + money(requested),
+    "Monthly income: " + (income ? money(Number(income)) : "Not provided"),
+    "Preferred period: " + period,
+    "Additional information: " + (details || "None"),
+    "",
+    "I understand this is an application enquiry only, not a loan approval. Please provide your verified business details, written loan terms, all fees and official payment channels before I make any payment."
+  ].join("\n");
+
+  document.getElementById("formStatus").textContent =
+    "Your WhatsApp draft is ready. Review the message in WhatsApp and press Send if you wish to submit it.";
+
+  document.getElementById("formStatus").classList.add("show");
+
+  window.open(waLink(message), "_blank", "noopener,noreferrer");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+  </html>
